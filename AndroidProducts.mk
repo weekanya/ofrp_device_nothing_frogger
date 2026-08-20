@@ -1,12 +1,13 @@
 #
-# Copyright (C) 2025 The Android Open Source Project
-# Copyright (C) 2025 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2026 The Android Open Source Project
+# Copyright (C) 2026 The OrangeFox Recovery Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_Frogger.mk
+    $(LOCAL_DIR)/fox_Frogger.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_Frogger-ap2a-eng
+    fox_Frogger-ap2a-eng \
+    fox_Frogger-ap2a-userdebug

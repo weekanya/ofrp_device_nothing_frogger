@@ -14,4 +14,3 @@ for d in $DRIVERS; do
     echo "Force inserted module: $d" >>/tmp/recovery.log
   fi
 done
-

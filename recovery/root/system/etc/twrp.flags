@@ -1,18 +1,16 @@
 # Mount point     fstype      device          device2                     flags
 
 # Logical partitions
-#
 /system_root      ext4        system                                      flags=display=System;logical;slotselect
 /system_ext       ext4        system_ext                                  flags=display=System_EXT;logical;slotselect
-/system_dlkm      ext4        system_dlkm                                 flags=display=System_DLKM;logical
-/vendor_dlkm      ext4        vendor_dlkm                                 flags=display=Vendor_DLKM;logical
-/system_root      erofs       system                                      flags=display=System;logical;slotselect
-/system_ext       erofs       system_ext                                  flags=display=System_EXT;logical
-/system_dlkm      erofs       system_dlkm                                 flags=display=System_DLKM;logical
-/vendor_dlkm      erofs       vendor_dlkm                                 flags=display=Vendor_DLKM;logical
+/product          ext4        product                                     flags=display=Product;logical;slotselect
+/vendor           ext4        vendor                                      flags=display=Vendor;logical;slotselect
+/odm              ext4        odm                                         flags=display=ODM;logical;slotselect
+/system_dlkm      ext4        system_dlkm                                 flags=display=System_DLKM;logical;slotselect
+/vendor_dlkm      ext4        vendor_dlkm                                 flags=display=Vendor_DLKM;logical;slotselect
 
 # Userdata/metadata partitions
-/metadata         auto        /dev/block/by-name/metadata                 flags=display="Metadata";backup=1;wrappedkey
+/metadata         auto        /dev/block/bootdevice/by-name/metadata      flags=display="Metadata";backup=1;wrappedkey
 
 # Boot partitions
 /boot             emmc        /dev/block/bootdevice/by-name/boot          flags=slotselect
@@ -36,11 +34,11 @@
 
 # Modem partitions
 /modem            vfat        /dev/block/bootdevice/by-name/modem         flags=display="Modem";slotselect;fsflags="ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0 wait"
-/modem            emmc        /dev/block/bootdevice/by-name/modem         flags=display="Modem";slotselect;backup=1;flashimg=1
+/modem_image      emmc        /dev/block/bootdevice/by-name/modem         flags=display="Modem Image";slotselect;backup=1;flashimg=1
 /dsp              ext4        /dev/block/bootdevice/by-name/dsp           flags=display="DSP";slotselect;fsflags="ro"
-/dsp_image        emmc        /dev/block/bootdevice/by-name/dsp           flags=display="DSP";slotselect;backup=1
+/dsp_image        emmc        /dev/block/bootdevice/by-name/dsp           flags=display="DSP Image";slotselect;backup=1
 /bluetooth        vfat        /dev/block/bootdevice/by-name/bluetooth     flags=display="Bluetooth";slotselect;fsflags="ro,shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0 wait"
-/bluetooth_image  emmc        /dev/block/bootdevice/by-name/bluetooth     flags=display="Bluetooth";slotselect;backup=1;flashimg=1
+/bluetooth_image  emmc        /dev/block/bootdevice/by-name/bluetooth     flags=display="Bluetooth Image";slotselect;backup=1;flashimg=1
 
 # UEFI partitions
 /logfs            vfat        /dev/block/bootdevice/by-name/logfs         flags=display="LogFS (UEFI)";fsflags="umask=006,uid=1000,gid=1000,utf8"
@@ -59,5 +57,5 @@
 /keystore         emmc      /dev/block/bootdevice/by-name/keystore        flags=backup=1;subpartitionof=/ssd
 
 # Removable partitions
-/storage       	  auto        /data/media/0                  		          flags=display="Internal Storage";backup=1;usermrf;fsflags="bind,utf8";removable
+/storage       	  auto        /data/media/0                  		          flags=display="Internal Storage";backup=0;usermrf;fsflags="bind,utf8";removable
 /usb_otg          auto        /dev/block/sdg1   /dev/block/sdg            flags=display="USB Storage";fsflags="utf8,sync";storage;formattable;removable

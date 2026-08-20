@@ -1,1 +1,1 @@
-require board=frogger|pineapple
+require board=frogger|volcano

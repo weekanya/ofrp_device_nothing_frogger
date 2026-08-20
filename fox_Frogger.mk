@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2026 The Android Open Source Project
-# Copyright (C) 2026 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2026 The OrangeFox Recovery Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -9,17 +9,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Omni stuff.
+# Inherit common config
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from Frogger device
 $(call inherit-product, device/nothing/Frogger/device.mk)
-
-# Inherit from Frogger device
 $(call inherit-product, device/nothing/Frogger/twrp_config.mk)
 
 PRODUCT_DEVICE := Frogger
-PRODUCT_NAME := twrp_Frogger
+PRODUCT_NAME := fox_Frogger
 PRODUCT_BRAND := Nothing
 PRODUCT_MODEL := A069
 PRODUCT_MANUFACTURER := nothing

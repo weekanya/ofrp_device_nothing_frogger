@@ -19,10 +19,10 @@ Battery                 | Non-removable 5080 mAh
 Dimensions              | 164 x 77.6 x 8.6 mm
 Display                 | 6.78" AMOLED, 120Hz (1224 × 2720 pixels)
 
-Recovery        | TWRP 14.0
+Recovery        | OrangeFox Recovery Project (R12.1)
 :---------------|:---------------------------
-Variant         | 6.1
-Manifest        | https://github.com/nebrassy/platform_manifest_twrp_aosp.git
+Branch          | fox_14.1
+Manifest        | https://gitlab.com/OrangeFox/sync.git
 
 
 > [!NOTE]
