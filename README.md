@@ -1,4 +1,4 @@
-# twrp_device_nothing_frogger
+# ofrp_device_nothing_frogger
 
 Recovery tree for the Nothing Phone (4a), codenamed `frogger`.
 
@@ -46,7 +46,7 @@ Manifest        | https://gitlab.com/OrangeFox/sync.git
     - [x] MTP
     - [x] Filesystem/Mounts
     - [x] Slot switch
-    - [ ] Haptics
+    - [ ] Haptics (maybe working, idk)
 - [x] Settings persistence
 - [x] Data decryption
     - [x] Without a password
