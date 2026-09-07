@@ -8,7 +8,7 @@
 export FOX_BUILD_DEVICE="Frogger"
 export FOX_TARGET_DEVICES="Frogger,frogger,A069"
 export FOX_BUILD_TYPE="Unofficial"
-export OF_MAINTAINER="wee"
+export OF_MAINTAINER="wee TG: @weeqz"
 
 # Architecture and Partitions (A/B and Virtual A/B)
 export FOX_AB_DEVICE=1

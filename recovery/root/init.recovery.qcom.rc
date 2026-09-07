@@ -27,6 +27,7 @@ on property:twrp.modules.loaded=true && property:twrp.firmware.loaded=
     # Load ADSP firmware for PMIC
     restorecon_recursive /vendor/firmware_mnt
     wait /vendor/firmware_mnt/image/adsp.mdt
+    exec u:r:su:s0 -- /system/bin/sh -c "ln -sf /vendor/firmware_mnt/image/* /vendor/firmware/"
 
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1

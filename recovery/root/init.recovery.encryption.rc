@@ -51,9 +51,6 @@ on property:of_decryption_failed=true
 on property:ro.twrp.fastbootd=1 && property:twrp.firmware.mounted=true
     setprop twrp.firmware.mounted false
 
-# HM: Runs during decryption process
-on property:twrp.firmware.mounted=false && property:twrp.firmware.umounted=
-    umount /vendor/firmware_mnt
+# Keep firmware mounted for ADSP and PMIC battery/charging monitoring
 
-    setprop twrp.firmware.umounted true
 
