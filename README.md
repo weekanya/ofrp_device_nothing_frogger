@@ -1,30 +1,40 @@
 # OrangeFox Recovery for Nothing Phone (4a)
 
-OrangeFox Recovery device tree for the Nothing Phone (4a) (`frogger` / `A069`).
+OrangeFox Recovery device tree for the Nothing Phone (4a)
+(`frogger` / `A069`).
 
 ## Specifications
 
 | Parameter | Value |
 | :--- | :--- |
 | Device | Nothing Phone (4a) (`frogger` / `A069`) |
-| SoC | Qualcomm Snapdragon 7s Gen 3/4 (`volcano`) |
+| SoC | Qualcomm Snapdragon 7s Gen 4 (`volcano`) |
 | Maintainer | [wee](https://github.com/weekanya) ([@weeqz](https://t.me/weeqz)) |
 
 ## Status
 
 - [x] Boot & Touch
+- [x] 120 Hz display refresh rate
 - [x] Decryption (FBEv2 / Metadata)
 - [x] Flashing (ZIP / IMG)
 - [x] Backup & Restore
+- [x] Wipe
 - [x] Slot switching (`bootctl`)
-- [x] FastbootD & ADB
-- [x] MTP & USB-OTG
+- [x] Dynamic partitions
+- [x] FastbootD
+- [x] ADB
+- [x] MTP
+- [x] USB-OTG
 - [x] Battery & Charging status
-- [x] Haptics & Brightness
-
+- [x] CPU temperature
+- [x] Haptics
+- [x] Brightness control
+- [x] ADSP / firmware loading
+- [x] AVB / dm-verity
+- [x] Reboot to System
 ## Credits
 
-- **[wee](https://github.com/weekanya)** — Maintainer
+- **[wee](https://github.com/weekanya)** — OrangeFox port, fixes, improvements & maintainer
 - **[imqiyton](https://github.com/newqiyton)** — Initial device tree
 - **OrangeFox Recovery Project**
 - **TeamWin Recovery Project**
