@@ -39,7 +39,7 @@ Recovery device tree for the Nothing Phone (4a) (`frogger` / `A069`).
 
 ### Core Features
 - [x] **Data Decryption**:
-  - [x] Hardware Metadata Encryption (TrustZone KeyMint v16 / 2026-08-05 patchlevel)
+  - [x] Hardware Metadata Encryption
   - [x] File-Based Encryption (FBE) with PIN / pattern / password
   - [x] Decryption without password / default key
 - [x] **Flashing & Partitions**:
