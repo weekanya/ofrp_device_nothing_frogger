@@ -12,7 +12,7 @@ Recovery device tree for the Nothing Phone (4a) (`frogger` / `A069`).
 | Board | `volcano` |
 | CPU | Octa-core (1x2.7 GHz Cortex-A720 & 3x2.4 GHz Cortex-A720 & 4x1.8 GHz Cortex-A520) |
 | GPU | Adreno 810 |
-| Memory | 8 / 12 GB LPDDR5X |
+| Memory | 8 / 12 GB LPDDR4X |
 | Storage | 128 / 256 GB UFS 3.1 |
 | Battery | Non-removable 5080 mAh |
 | Display | 6.78" AMOLED, 120Hz (1224 × 2720 pixels) |
