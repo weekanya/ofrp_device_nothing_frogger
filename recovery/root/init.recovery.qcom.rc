@@ -16,12 +16,16 @@ on early-init
     write /sys/bus/platform/devices/1d84000.ufshc/enable_wb_buf_flush 0
 
 on property:twrp.modules.loaded=true && property:twrp.firmware.loaded=
+    mkdir /vendor/firmware_mnt 0771 system system
+    mkdir /vendor/firmware 0771 system system
     mkdir /mnt/vendor 0775 shell system
     mkdir /mnt/vendor/persist 0775 shell system
 
     # Mount firmware - Needed for ADSP firmwares
+    wait /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix}
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /vendor/firmware_mnt ro
     # Mount persist - Needed for haptics
+    wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist/ ro
 
     # Load ADSP firmware for PMIC
@@ -32,6 +36,7 @@ on property:twrp.modules.loaded=true && property:twrp.firmware.loaded=
     wait /sys/kernel/boot_adsp/boot
     write /sys/kernel/boot_adsp/boot 1
 
+    restart vendor.health-default
     setprop twrp.firmware.mounted true
 
 service runatboot /system/bin/runatboot.sh
