@@ -46,7 +46,7 @@ Recovery device tree for the Nothing Phone (4a) (`frogger` / `A069`).
   - [x] Flashing ZIP installers (Magisk, custom zips) with `/dev/block/by-name` support
   - [x] Flashing partition images (.img)
   - [x] Dynamic Partitions (erofs / f2fs / ext4)
-  - [x] Virtual A/B and slot switching (`bootctl`)
+  - [ ] Virtual A/B and slot switching (`bootctl`)
 - [x] **Hardware & Sensors**:
   - [x] Touchscreen & multi-touch
   - [x] Display refresh rate (120 Hz / 60 Hz toggle)
