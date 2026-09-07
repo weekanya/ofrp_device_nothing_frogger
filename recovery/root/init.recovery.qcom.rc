@@ -42,6 +42,7 @@ on init
 on early-fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice}/by-name /dev/block/by-name
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
     write /proc/sys/walt/sched_lib_mask_force 255
 

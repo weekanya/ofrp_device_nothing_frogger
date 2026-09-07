@@ -50,6 +50,6 @@ on property:ro.twrp.fastbootd=1 && property:twrp.firmware.mounted=true
 # HM: Runs during decryption process
 on property:twrp.firmware.mounted=false && property:twrp.firmware.umounted=
     umount /vendor/firmware_mnt
-    umount /mnt/vendor/persist
 
     setprop twrp.firmware.umounted true
+

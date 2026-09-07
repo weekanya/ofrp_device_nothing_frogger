@@ -45,3 +45,11 @@ export OF_DEVICE_WITHOUT_MIGT=1
 
 # Quick Backup Defaults
 export OF_QUICK_BACKUP_LIST="/boot;/init_boot;/data;/super;"
+
+# OrangeFox Installer Partitions
+export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/bootdevice/by-name/recovery"
+export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/bootdevice/by-name/system"
+export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/bootdevice/by-name/vendor"
+export FOX_RECOVERY_BOOT_PARTITION="/dev/block/bootdevice/by-name/boot"
+export FOX_RECOVERY_VENDOR_BOOT_PARTITION="/dev/block/bootdevice/by-name/vendor_boot"
+

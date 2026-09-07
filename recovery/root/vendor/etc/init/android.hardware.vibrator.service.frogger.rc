@@ -3,20 +3,21 @@
 # SPDX-License-Identifier: Apache-2.0
 
 on fs
-    wait /dev/aac_richtap
     chown system system /dev/aac_richtap
-    chmod 0600 /dev/aac_richtap
+    chmod 0660 /dev/aac_richtap
 
 on boot
-    wait /vendor/odm/etc/aac_richtap.config
+    wait /vendor/odm/etc/aac_richtap.config 1
     start vendor.vibrator
 
 service vendor.vibrator /vendor/bin/hw/android.hardware.vibrator.service.frogger
     class late_start
     user root
     group root system input
+    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/bin
     setenv RICHTAP_DEVICE_PATH /dev/aac_richtap
     setenv ENV_RICHTAP_CONFIG_PATH /vendor/odm/etc/aac_richtap.config
     seclabel u:r:recovery:s0
     interface aidl android.hardware.vibrator.IVibrator/default
     disabled
+
