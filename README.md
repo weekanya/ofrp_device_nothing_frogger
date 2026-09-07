@@ -28,7 +28,7 @@ Recovery device tree for the Nothing Phone (4a) (`frogger` / `A069`).
 
 ## Credits
 
-- **[wee](https://t.me/weeqz) or github (https://github.com/weekanya** — OFRP maintainer, bugfixes, battery/ADSP charging fix, thermal config, metadata encryption and FBE decryption fixes.
+- **[wee](https://t.me/weeqz) or [github](https://github.com/weekanya)** — OFRP maintainer, bugfixes, battery/ADSP charging fix, thermal config, metadata encryption and FBE decryption fixes.
 - **[imqiyton](https://github.com/newqiyton)** — Initial device tree and bringup.
 - **OrangeFox Recovery Project** team.
 - **TeamWin Recovery Project** (TWRP).
