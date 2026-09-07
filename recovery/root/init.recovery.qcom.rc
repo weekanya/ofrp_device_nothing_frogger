@@ -4,6 +4,10 @@ import /init.recovery.encryption.rc
 on early-init
     loglevel 7
     write /sys/fs/selinux/enforce 0
+    exec u:r:su:s0 -- /sbin/resetprop ro.build.version.release 16
+    exec u:r:su:s0 -- /sbin/resetprop ro.build.version.release_or_codename 16
+    exec u:r:su:s0 -- /sbin/resetprop ro.build.version.security_patch 2026-08-05
+    exec u:r:su:s0 -- /sbin/resetprop ro.vendor.build.security_patch 2026-08-05
 
 on early-init
     # UFS Tuning (taken from amethyst tree)

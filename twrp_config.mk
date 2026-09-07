@@ -21,6 +21,7 @@ TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 OF_USE_AIDL_BOOT_CONTROL := 1
+TW_SKIP_ADDITIONAL_FSTAB := true
 
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko focaltech_fts.ko hapticdrv.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
