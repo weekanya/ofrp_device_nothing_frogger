@@ -54,8 +54,9 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     vendor.display.config@2.0 \
     libdebuggerd_client
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental"
+    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.build.version.security_patch;ro.vendor.build.security_patch;ro.build.version.release"
 TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
+TW_SYSTEM_BUILD_PROP_ADDITIONAL_PATHS := etc/build.prop
 RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.allocator@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hidl.memory@1.0.so \
