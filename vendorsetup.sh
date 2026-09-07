@@ -8,7 +8,11 @@
 export FOX_BUILD_DEVICE="Frogger"
 export FOX_TARGET_DEVICES="Frogger,frogger,A069"
 export FOX_BUILD_TYPE="Unofficial"
-export OF_MAINTAINER="wee TG: @weeqz"
+export OF_MAINTAINER="wee @weeqz"
+
+# Status bar margins (rounded corners fix)
+export OF_STATUS_INDENT_LEFT=48
+export OF_STATUS_INDENT_RIGHT=48
 
 # Architecture and Partitions (A/B and Virtual A/B)
 export FOX_AB_DEVICE=1

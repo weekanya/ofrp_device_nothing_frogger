@@ -24,6 +24,10 @@ TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 # Thermal / CPU Temperature
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone17/temp"
 
+# Margins / Display (prevent clipping on curved screen)
+OF_STATUS_INDENT_LEFT := 48
+OF_STATUS_INDENT_RIGHT := 48
+
 # Haptics / Vibrations
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/default"
