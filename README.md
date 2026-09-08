@@ -14,7 +14,6 @@ OrangeFox Recovery device tree for the Nothing Phone (4a)
 ## Status
 
 - [x] Boot & Touch
-- [x] 120 Hz display refresh rate
 - [x] Decryption (FBEv2 / Metadata)
 - [x] Flashing (ZIP / IMG)
 - [x] Backup & Restore
