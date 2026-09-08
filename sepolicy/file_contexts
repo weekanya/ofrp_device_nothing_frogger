@@ -1,1 +1,9 @@
-/dev/aac_richtap   u:object_r:vibrator_device:s0
+/dev/aac_richtap       u:object_r:vibrator_device:s0
+/dev/qseecom           u:object_r:tee_device:s0
+/dev/smcinvoke         u:object_r:tee_device:s0
+/dev/spcom             u:object_r:tee_device:s0
+/dev/spu_bio           u:object_r:tee_device:s0
+/dev/spu_bloader       u:object_r:tee_device:s0
+/dev/sp_ssr            u:object_r:tee_device:s0
+/dev/sp_keymaster      u:object_r:tee_device:s0
+/dev/sp_kernel         u:object_r:tee_device:s0

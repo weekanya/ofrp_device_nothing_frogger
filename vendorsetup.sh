@@ -10,10 +10,6 @@ export FOX_TARGET_DEVICES="Frogger,frogger,A069"
 export FOX_BUILD_TYPE="Unofficial"
 export OF_MAINTAINER="wee @weeqz"
 
-# Status bar margins (rounded corners fix)
-export OF_STATUS_INDENT_LEFT=48
-export OF_STATUS_INDENT_RIGHT=48
-
 # Architecture and Partitions (A/B and Virtual A/B)
 export FOX_AB_DEVICE=1
 export FOX_VIRTUAL_AB_DEVICE=1
@@ -53,8 +49,6 @@ export OF_QUICK_BACKUP_LIST="/boot;/init_boot;/data;/super;"
 
 # OrangeFox Installer Partitions
 export FOX_RECOVERY_INSTALL_PARTITION="/dev/block/bootdevice/by-name/recovery"
-export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/bootdevice/by-name/system"
-export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/bootdevice/by-name/vendor"
 export FOX_RECOVERY_BOOT_PARTITION="/dev/block/bootdevice/by-name/boot"
 export FOX_RECOVERY_VENDOR_BOOT_PARTITION="/dev/block/bootdevice/by-name/vendor_boot"
 

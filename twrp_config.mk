@@ -1,8 +1,5 @@
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TARGET_SCREEN_WIDTH := 1224
-TARGET_SCREEN_HEIGHT := 2720
-DEVICE_RESOLUTION := 1224x2720
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_NO_INPUT_DEVICES := false
 TW_INPUT_BLACKLIST := "null"
@@ -20,8 +17,6 @@ TW_INCLUDE_RESETPROP    := true
 TW_EXTRA_LANGUAGES      := true
 TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
-OF_USE_AIDL_BOOT_CONTROL := 1
-TW_SKIP_ADDITIONAL_FSTAB := true
 
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko rproc_qcom_common.ko q6_dlkm.ko qcom_q6v5.ko qcom_q6v5_pas.ko qcom_sysmon.ko focaltech_fts.ko hapticdrv.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
@@ -56,7 +51,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     vendor.display.config@2.0 \
     libdebuggerd_client
 TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.build.version.security_patch;ro.vendor.build.security_patch;ro.build.version.release"
+    "ro.build.product;ro.build.fingerprint=ro.vendor.build.fingerprint;ro.build.version.incremental;ro.build.version.security_patch;ro.vendor.build.security_patch;ro.build.version.release;ro.build.version.release_or_codename=ro.build.version.release"
 TW_OVERRIDE_PROPS_ADDITIONAL_PARTITIONS := vendor
 TW_SYSTEM_BUILD_PROP_ADDITIONAL_PATHS := etc/build.prop
 RECOVERY_LIBRARY_SOURCE_FILES += \
