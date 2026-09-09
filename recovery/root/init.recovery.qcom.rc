@@ -21,6 +21,7 @@ on property:twrp.modules.loaded=true
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist/ ro
 
     # Load ADSP firmware for PMIC
+    exec u:r:su:s0 -- /system/bin/setenforce 0
     restorecon_recursive /vendor/firmware_mnt
     wait /vendor/firmware_mnt/image/adsp.mdt
     exec u:r:su:s0 -- /system/bin/sh -c "ln -sf /vendor/firmware_mnt/image/* /vendor/firmware/"
@@ -40,6 +41,7 @@ service runatboot /system/bin/runatboot.sh
 
 on init
     start vendor.boot-qti
+    exec u:r:su:s0 -- /system/bin/setenforce 0
 
 on early-fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}

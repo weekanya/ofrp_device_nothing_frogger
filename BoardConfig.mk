@@ -55,6 +55,9 @@ TARGET_PREBUILT_KERNEL        := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MKBOOTIMG_ARGS          += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
+BOARD_KERNEL_CMDLINE          += androidboot.selinux=permissive
+BOARD_BOOTCONFIG              += androidboot.selinux=permissive
+
 
 # Graphics
 TARGET_USES_VULKAN := true
