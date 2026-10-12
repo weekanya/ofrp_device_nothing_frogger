@@ -13,8 +13,6 @@ export OF_MAINTAINER="wee @weeqz"
 # Architecture and Partitions (A/B and Virtual A/B)
 export FOX_AB_DEVICE=1
 export FOX_VIRTUAL_AB_DEVICE=1
-export OF_USE_AIDL_BOOT_CONTROL=1
-export OF_DYNAMIC_FULL_SIZE=9126805504
 
 # Display / Notch / Status Bar (1224 x 2720 AMOLED)
 export OF_SCREEN_H=2720

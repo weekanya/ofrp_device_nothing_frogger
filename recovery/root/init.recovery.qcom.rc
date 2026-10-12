@@ -1,11 +1,10 @@
 import /init.recovery.encryption.rc
 
 on early-init
-    loglevel 7
     # UFS Tuning (taken from amethyst tree)
-    write /sys/bus/platform/devices/1d84000.ufshc/auto_hibern8 0
-    write /sys/bus/platform/devices/1d84000.ufshc/clkgate_enable 0
-    write /sys/bus/platform/devices/1d84000.ufshc/enable_wb_buf_flush 0
+    write /sys/bus/platform/devices/${ro.boot.bootdevice}/auto_hibern8 0
+    write /sys/bus/platform/devices/${ro.boot.bootdevice}/clkgate_enable 0
+    write /sys/bus/platform/devices/${ro.boot.bootdevice}/enable_wb_buf_flush 0
 
 on property:twrp.modules.loaded=true
     mkdir /vendor/firmware_mnt 0771 system system
@@ -21,7 +20,6 @@ on property:twrp.modules.loaded=true
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist/ ro
 
     # Load ADSP firmware for PMIC
-    exec u:r:su:s0 -- /system/bin/setenforce 0
     restorecon_recursive /vendor/firmware_mnt
     wait /vendor/firmware_mnt/image/adsp.mdt
     exec u:r:su:s0 -- /system/bin/sh -c "ln -sf /vendor/firmware_mnt/image/* /vendor/firmware/"
@@ -49,16 +47,6 @@ on early-fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice}/by-name /dev/block/by-name
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
     write /proc/sys/walt/sched_lib_mask_force 255
-
-on fs
-    # All entries in recovery.fstab
-    write /sys/block/sda/queue/read_ahead_kb 2048
-    write /sys/block/sda/queue/nr_requests 256
-    write /sys/block/sda/queue/discard_max_bytes 134217728
-
-    # Persist partition
-    write /sys/block/sdf/queue/read_ahead_kb 2048
-    write /sys/block/sdf/queue/nr_requests 256
 
 on boot
     start runatboot

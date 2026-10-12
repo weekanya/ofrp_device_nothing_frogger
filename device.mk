@@ -3,14 +3,11 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-# Enable updating of APEXes
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+DEVICE_PATH := device/nothing/Frogger
 
 # A/B
 $(call inherit-product, \
     $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
-
-DEVICE_PATH := device/nothing/Frogger
 
 PRODUCT_PACKAGES += \
     snapuserd \
@@ -29,24 +26,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
-    update_verifier \
-    checkpoint_gc \
-    otapreopt_script \
+    update_verifier
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
-
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=erofs \
-    POSTINSTALL_OPTIONAL_system=true
-
-AB_OTA_POSTINSTALL_CONFIG += \
-    RUN_POSTINSTALL_vendor=true \
-    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
-    FILESYSTEM_TYPE_vendor=erofs \
-    POSTINSTALL_OPTIONAL_vendor=true
 
 # F2FS
 PRODUCT_PACKAGES += \
@@ -60,12 +43,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
-    $(LOCAL_PATH)/security/otacert
-
-
-# Vibrator
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+    $(DEVICE_PATH)/security/otacert
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
@@ -82,7 +60,7 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
+    $(DEVICE_PATH) \
     vendor/qcom/opensource/commonsys-intf/display
 
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fuse.passthrough.enable=true
