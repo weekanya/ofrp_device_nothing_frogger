@@ -1,5 +1,9 @@
 #!/system/bin/sh
 
+# Called twice: by init with "hw" (also in fastbootd), and by twrp.cpp after
+# foxstart.sh. Hardware setup runs only once; props and KeyMint only from twrp.
+if mkdir /tmp/.runatboot_hw 2>/dev/null; then
+
 # Load touch drivers if they didn't load
 # Adapted from chickendrop89
 
@@ -34,6 +38,10 @@ for z in /sys/class/thermal/thermal_zone*; do
 done
 [ -z "$cpu_zone" ] && cpu_zone="/sys/class/thermal/thermal_zone17"
 ln -sf "$cpu_zone/temp" /tmp/cpu_temp
+
+fi
+
+[ "$1" = "hw" ] && exit 0
 
 # Restore true OS release from system build.prop (foxstart.sh erroneously prioritizes vendor's Android 14 BSP)
 sys_prop="/FFiles/temp/system_build_prop"

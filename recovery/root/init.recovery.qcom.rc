@@ -30,7 +30,7 @@ on property:twrp.modules.loaded=true
     restart vendor.health-default
     setprop twrp.firmware.mounted true
 
-service runatboot /system/bin/runatboot.sh
+service runatboot /system/bin/runatboot.sh hw
     user root
     group root
     disabled
